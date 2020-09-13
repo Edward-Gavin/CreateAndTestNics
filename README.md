@@ -1,6 +1,6 @@
 # CreateAndTestNics
 ### 场景描述
-任务目的主要是想通过SDK的方式维护云服务器的网卡信息，主要是想通过SDK管理网卡信息。
+任务目的主要是想通过SDK的方式维护云服务器的网卡信息，通过SDK管理网卡信息，并实现网卡测速。
 ### 前提条件
 服务器环境：
 
@@ -56,10 +56,10 @@
    2.  项目的id：在我的凭证->项目列表 中，这些项目ID要和自己的服务器所在的区域对应。
    3. 云账号id：同样在我的凭证->API凭证中，这里是账号ID
    4. 关于endpoint url，千万不能搞错，根据你的服务器的位置来确定，具体请移步：https://developer.huaweicloud.com/endpoint
-    这里千万要注意，这里的url中的区域一定要与你的项目的区域对应上，不然旧后悔去吧，这个位置会更是个大坑。
+    这里千万要注意，这里的url中的区域一定要与你的项目的区域对应上，不然就后悔去吧，这里是个大坑。
    5. 实例id：就是你的服务器的id。
-   6. 子网id：记住这个是网络id，并不是子网id，进入网络控制台的子网菜单中后，会有子网id和网络id，这里是网络ID；千万记住。
-   7. 网卡id：指的是在删除网卡的时候会需要的id，这个在你添加网卡后，会有，在删除网卡是需要，方便测试，我也把这个写进来了。
+   6. 子网id：记住这个是网络id，并不是子网id，进入网络控制台的子网菜单中后，会有子网id和网络id，这里是网络ID，千万记住。
+   7. 网卡id：指的是在删除网卡的时候会需要的id，这个在你添加网卡后会有，在删除网卡时需要，方便测试，我也把这个写进来了。
 
 
 二、 创建认证及ECS客户端如下
@@ -117,8 +117,8 @@ public static void addInterface(EcsClient ecsClient, String serId, String subNet
         }
     }
 ```
-这里详细的服务器相关的接口请移步：https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/master/services/ecs/src/main/java/com/huaweicloud/sdk/ecs/v2/EcsClient.java
-这里有全部的接口相关的信息，请仔细研究，因为我们只是做网卡相关的配置，所以这里只用了网卡相关的接口信息。
+详细服务器相关的接口请移步：https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/master/services/ecs/src/main/java/com/huaweicloud/sdk/ecs/v2/EcsClient.java
+这里有全部的接口相关的信息，请仔细研究，因为我只是做网卡相关的配置，所以这里只用了网卡相关的接口信息。
 
 结果如下：配置了两个网卡
 ```shell 
@@ -153,11 +153,11 @@ public static void addInterface(EcsClient ecsClient, String serId, String subNet
 ![avatar](./src/img/socket-transport-application.png)
 
 服务端：
-```shell script
+```shell
 [root@ecs-c183 ~]#  java Server
 ```
 客户端：
-```shell script
+```shell
 (base) ➜  java Client
 ```
 测试结果如下：
