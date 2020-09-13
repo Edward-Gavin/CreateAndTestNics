@@ -60,7 +60,9 @@
    5. 实例id：就是你的服务器的id。
    6. 子网id：记住这个是网络id，并不是子网id，进入网络控制台的子网菜单中后，会有子网id和网络id，这里是网络ID，千万记住。
    7. 网卡id：指的是在删除网卡的时候会需要的id，这个在你添加网卡后会有，在删除网卡时需要，方便测试，我也把这个写进来了。
-
+   8. 另外，在我们配置的过程中难免会出错，所以我在这里列出常见的错误代码以及对应的解决方法的连接：
+   弹性云服务器ECS错误码说明：https://support.huaweicloud.com/api-ecs/ecs_07_0002.html
+   API签名指南错误代码说明（一般在提示认证错误的时候查看这个）：https://support.huaweicloud.com/devg-apisign/api-sign-errorcode.html 
 
 二、 创建认证及ECS客户端如下
 ```java
@@ -170,6 +172,15 @@ public static void addInterface(EcsClient ecsClient, String serId, String subNet
 ![avatar](./src/img/after.png)
 
 
+参考资料：
+
+[1] 多个网卡使用一个ip的设置 https://www.cnblogs.com/dkblog/archive/2011/07/26/2117383.html
+
+[2] 双网卡单IP实现网卡冗余与负载均衡 https://blog.51cto.com/mcmvp/1266726
+
+[3] 华为云SDK参考文档（新版）https://github.com/huaweicloud/huaweicloud-sdk-java-v3
+
+[4] Socket 通信的实现 https://www.cnblogs.com/coder-wzr/p/7838553.html
 
 
 
