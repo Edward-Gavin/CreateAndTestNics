@@ -161,7 +161,14 @@ public static void addInterface(EcsClient ecsClient, String serId, String subNet
 (base) ➜  java Client
 ```
 测试结果如下：
-![avatar](./src/img/pre.png)
+单网卡时：
+
+![avatar](./src/img/before.png)
+
+双网卡时：
+
+![avatar](./src/img/after.png)
+
 
 
 
