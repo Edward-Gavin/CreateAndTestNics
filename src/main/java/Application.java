@@ -16,9 +16,9 @@ import java.util.List;
 @lombok.extern.slf4j.Slf4j
 public class Application {
     // 访问密钥
-    private static String ak = "5A9TP9JPZEF4WD68JR2Y";
+    private static String ak = "***";
     // 私有的访问密钥
-    private static String sk = "nN1Y4Vi7TjlbABz1VMC4sdVywyKBH0dUlJZw223S";
+    private static String sk = "***";
     // 云服务所在的项目id
     private static String projectId = "05999653698026a82fc1c013159ed5a8";
     // 华为云账号id
